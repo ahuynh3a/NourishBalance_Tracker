@@ -6,15 +6,24 @@ get("/") do
   erb(:homepage)
 end
 
-post("/nutrition_facts") do
-  @user_recipie_for_analysis = params.fetch("user_recipie")
+get("/nutrition_facts") do
+  
+@ingredients_array = params.fetch("user_recipie").split("\r\n")
 
-  nutrition_analysis_key = ENV.fetch("NUTRITION_ANALYSIS_API")
+@ingredients_array.each do |ingredient|
 
-  nutrition_url =  https://api.edamam.com/api/nutrition-details
+  encoded_ingr = ingredient.gsub(" ","%20")
 
-  @raw_gmaps_data = HTTP.get(gmaps_url).to_s
+  app_key = ENV.fetch("NUTRITION_ANALYSIS_API")
 
-  @parsed_response= JSON.parse(@raw_gmaps_data)
-  erb(:nutrition_facts)
+  app_id = ENV.fetch("NUTRITION_ANALYSIS_APP_ID")
+
+  nutrition_analysis_url = "https://api.edamam.com/api/nutrition-data?app_id=#{app_id}&app_key=#{app_key}&nutrition-type=cooking&ingr=#{encoded_ingr}"
+
+  @raw_data = HTTP.get(nutrition_analysis_url).to_s
+
+  @parsed_response= JSON.parse(@raw_data)
+end 
+
+erb(:nutrition_facts)
 end
