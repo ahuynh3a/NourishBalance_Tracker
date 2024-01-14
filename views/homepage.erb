@@ -1,13 +1,19 @@
-<h1>Let's analyze your recipie!</h1>
+ <header>
+        <h1>Recipe Analyzer</h1>
+    </header>
 
-<form action="/nutrition_facts">
-<label for="recipie">Enter an ingredient list for what you are cooking, like "1 cup rice, 10 oz chickpeas", etc.
-Enter each ingredient on a new line.</label>
-<div>
-  <textarea id= "recipie" type="text" name="user_recipie" placeholder= "1 cup rice&#10;10 oz chickpeas" rows="20" cols="50"></textarea>
-</div>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
 
-  <button>Analyze</button>
-</form>
+    <main>
+        <form action="/nutrition_facts">
+            <h1>Analyze Your Recipe</h1>
+            <label for="recipie">Enter an ingredient list for what you are cooking (e.g., "1 cup rice, 10 oz chickpeas"). Enter each ingredient on a new line.</label>
+            <div>
+                <textarea id="recipie" type="text" name="user_recipie" placeholder="1 cup rice&#10;10 oz chickpeas" rows="8"></textarea>
+            </div>
 
-</form>
+            <button>Analyze</button>
+        </form>
+    </main>

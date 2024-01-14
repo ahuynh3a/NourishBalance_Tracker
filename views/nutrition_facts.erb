@@ -1,1 +1,126 @@
-<%=@parsed_response%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Facts</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .list-group-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+ <header>
+        <h1>Recipe Analyzer</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="mb-4">Nutrition Facts</h1>
+
+        <!-- Total Calories per Ingredient Card -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Total Calories per Ingredient</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+                <% @calories_hash.each do |ingredient, calories| %>
+                    <li class="list-group-item"><strong><%= ingredient %>:</strong> <%= calories %> calories</li>
+                <% end %>
+            </ul>
+        </div>
+
+        <!-- Total Calories Card -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Total Calories</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Total calories:</strong> <%= @total_calories %>g</li>
+            </ul>
+        </div>
+
+        <!-- Macros Card -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Macros</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Protein:</strong> <%= @total_protein %>g</li>
+                <li class="list-group-item"><strong>Total Carbohydrates:</strong> <%= @total_carbohydrates %>g</li>
+                <li class="list-group-item"><strong>Total Fat:</strong> <%= @total_fats %>g</li>
+            </ul>
+        </div>
+
+        <!-- Analyze Another Recipe Button -->
+        <a href="/" class="btn btn-primary mt-4">Analyze Another Recipe!</a>
+    </div>
+</body>
+
+</html>
