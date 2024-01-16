@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Analyzer</title>
-
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -58,6 +56,12 @@
             margin-bottom: 20px;
         }
 
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin: 0;
+        }
+
         label {
             display: block;
             margin-bottom: 10px;
@@ -80,6 +84,50 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
+            
+        }
+        
+          .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .list-group-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 3px;
             font-size: 16px;
         }
     </style>
