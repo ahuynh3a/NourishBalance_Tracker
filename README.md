@@ -1,5 +1,6 @@
 # NourishBalance_Tracker
 
+#About
 This app allows you to calculate the total calories and macro nutrients in your ingredient list.   
 
 Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
