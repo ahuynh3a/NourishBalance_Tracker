@@ -1,6 +1,6 @@
-# sinatra-template
+# NourishBalance_Tracker
 
-Use this repository to create new Sinatra apps. 
+This app allows you to calculate the total calories and macro nutrients in your ingredient list.   
 
 Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
 
