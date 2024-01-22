@@ -1,19 +1,12 @@
 # NourishBalance_Tracker
 
-#About
-This app allows you to calculate the total calories and macro nutrients in your ingredient list.   
+A Sinatra app that uses the EDAMAM Nutrition Analysis API.
 
-Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
+# Features:
+- Calculate the total calories and macro nutrients in the ingredient list for your recipie.   
 
-```ruby
-require "sinatra/activerecord"
-```
-
-And in the `config/environment.rb` file add this code block:
-
-```ruby
-configure do
-  # setup a database connection
-  set(:database, { adapter: "sqlite3", database: "db/development.sqlite3" })
-end
-```
+# Usage:
+- Run bin/dev in the terminal
+- Lauch the website from the port
+- Paste your list of ingredients into the text box (make sure you enter each ingredient on a new line)
+- Hit "Analyze!"
